@@ -8,3 +8,14 @@ body {
 h1 {
     text-align:center;
 }
+
+.es-grid {
+    display:grid;
+    grid-template-columns: repeat(16, 1fr);
+    border: 1px solid #ccc;
+}
+
+.es-grid-item {
+    background-color: #fff;
+    width: 10px;
+}
