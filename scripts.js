@@ -12,7 +12,7 @@ console.log(gridContainer);
             const gridItem = document.createElement("div");
 
             gridItem.className = 'es-grid-item';
-            gridItem.textContent = `Cell ${i + 1}-${j + 1}`;
+
             gridContainer.appendChild(gridItem);
         }
     }
