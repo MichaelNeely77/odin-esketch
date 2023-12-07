@@ -10,8 +10,8 @@ h1 {
 }
 
 .es-grid {
-    display:grid;
-    grid-template-columns: repeat(16, 1fr);
+    display:flex;
+    flex-wrap: wrap;
     border: 1px solid #ccc;
 }
 
