@@ -13,10 +13,12 @@ h1 {
     display:flex;
     flex-wrap: wrap;
     border: 1px solid #ccc;
+    width: 770px;
+    justify-content: center;
+    align-content: center;
 }
 
 .es-grid-item {
-    background-color: #fff;
     width: 10px;
     height: 10px;
     border: 1px solid #ccc;
