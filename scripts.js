@@ -1,8 +1,6 @@
 const rows= 64;
 const columns = 64;
 const gridContainer = document.getElementById("esGrid");
-const gridBorder = document.querySelector(".border");
-console.log(gridBorder);
 console.log(gridContainer);
 
 
@@ -17,10 +15,10 @@ console.log(gridContainer);
     }
     const gridItemCell = document.querySelector(".es-grid-item");
 
-    gridItemCell.addEventListener('click', function(){
-        console.log("clicked");
+    gridItemCell.addEventListener('dragstart', function(){
+        console.log("dragged");
     });
-
+console.log(gridItemCell);
 
 
 
