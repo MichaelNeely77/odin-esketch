@@ -9,6 +9,10 @@ h1 {
     text-align:center;
 }
 
+#canvasWrap {
+    border: 1px solid #000;
+}
+
 .es-grid {
     display:flex;
     flex-wrap: wrap;
