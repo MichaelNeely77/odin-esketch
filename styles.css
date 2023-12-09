@@ -9,13 +9,16 @@ h1 {
     text-align:center;
 }
 
-#canvasWrap {
+#es-grid-container {
     border: 1px solid #000;
-}
-
-.es-grid {
+    width: 770px;
+    height: 770px;
     display:flex;
     flex-wrap: wrap;
+}
+
+.es-grid-item {
+
     border: 1px solid #ccc;
     width: 770px;
     justify-content: center;
@@ -26,4 +29,8 @@ h1 {
     width: 10px;
     height: 10px;
     border: 1px solid #ccc;
+}
+
+.es-grid-item:hover {
+    background-color: #666;
 }
