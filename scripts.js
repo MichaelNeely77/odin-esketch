@@ -9,6 +9,16 @@ for (let i = 0; i < rows; i++ ) {
         const gridItem = document.createElement("div");
         gridItem.className = "es-grid-item";
         gridContainer.appendChild(gridItem);
-
+        gridItem.addEventListener("mouseover", () => {
+            gridItem.style.backgroundColor = "#ccc";
+        });
+        gridItem.addEventListener("dragenter", () => {
+            gridItem.style.backgroundColor = "#ccc";
+        });
     }
+
 }
+
+
+
+
