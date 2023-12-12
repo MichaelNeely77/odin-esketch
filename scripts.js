@@ -2,6 +2,7 @@ const selectButton = document.querySelector(".grid-size-button button");
 
 function gridSizePrompt() {
     let gridSize = prompt("How many squares would you like?");
+    // GridSize needs to be validated for specific limits
     let rows = gridSize;
     let columns = gridSize;
 
