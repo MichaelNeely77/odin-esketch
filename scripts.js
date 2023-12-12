@@ -1,5 +1,8 @@
-const rows = 64;
-const columns = 64;
+
+
+
+const rows = 16;
+const columns = 16;
 
 const gridContainer = document.getElementById("es-grid-container");
 

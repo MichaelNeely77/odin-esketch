@@ -11,8 +11,8 @@ h1 {
 
 #es-grid-container {
     border: 1px solid #000;
-    width: 770px;
-    height: 770px;
+    width: 500px;
+    height: 500px;
     display:flex;
     flex-wrap: wrap;
 }
@@ -20,7 +20,6 @@ h1 {
 .es-grid-item {
 
     border: 1px solid #ccc;
-    width: 770px;
     justify-content: center;
     align-content: center;
 }
