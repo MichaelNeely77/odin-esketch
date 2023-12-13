@@ -30,15 +30,8 @@ h1 {
 }
 
 .es-grid-item {
-
     border: 1px solid #ccc;
     justify-content: center;
     align-content: center;
-    width: 10px;
-    height: 10px;
     border: 1px solid #ccc;
-}
-
-.es-grid-item:hover {
-    background-color: #666;
 }
