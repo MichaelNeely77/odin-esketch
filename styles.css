@@ -34,9 +34,6 @@ h1 {
     border: 1px solid #ccc;
     justify-content: center;
     align-content: center;
-}
-
-.es-grid-item {
     width: 10px;
     height: 10px;
     border: 1px solid #ccc;
