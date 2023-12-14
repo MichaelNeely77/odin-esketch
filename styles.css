@@ -13,7 +13,7 @@ h1 {
     margin: 20px 0;
 }
 
-.grid-size-button button {
+button {
     background-color: navy;
     color: white;
     border-radius: 3px;
@@ -27,11 +27,11 @@ h1 {
     height: 500px;
     display:flex;
     flex-wrap: wrap;
+    flex: 0 0 auto;
 }
 
 .es-grid-item {
     border: 1px solid #ccc;
     justify-content: center;
     align-content: center;
-    border: 1px solid #ccc;
 }
