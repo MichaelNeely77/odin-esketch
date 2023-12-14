@@ -35,7 +35,8 @@ let gridSize = prompt("How many squares would you like?");
 rows = gridSize;
 columns = gridSize;
 
-
+/* Possible solution to making teh grid the same size is something like gridContainer.innerWidth / gridSize maybe?
+*/
 
 
 
