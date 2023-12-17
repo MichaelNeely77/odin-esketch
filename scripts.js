@@ -48,20 +48,22 @@ const selectBtn = document.querySelector(".grid-size-button button");
 const containerWidth = document.getElementById('es-grid-container').clientWidth;
 
 const gridContainer = document.getElementById("es-grid-container");
+let totalSquares = rows * columns;
+for(let i = 0; i < totalSquares; i++) {
+    const gridItemSize = containerWidth / rows;
+    const gridItem = document.createElement('div');
+    gridItem.classList.add('es-grid-item');
+    gridItem.style.width = `${gridItemSize}px`;
+    gridItem.style.height = `${gridItemSize}px`;
+    gridContainer.appendChild(gridItem);
+}
 selectBtn.addEventListener('click', () => {
     let gridSize = prompt("How many squares would you like?");
     rows = gridSize;
     columns = gridSize;
     console.log(gridSize);
-    let totalSquares = rows * columns;
-    for(let i = 0; i < totalSquares; i++) {
-        const gridItemSize = containerWidth / rows;
-        const gridItem = document.createElement('div');
-        gridItem.classList.add('es-grid-item');
-        gridItem.style.width = `${gridItemSize}px`;
-        gridItem.style.height = `${gridItemSize}px`;
-        gridContainer.appendChild(gridItem);
-    }
+
+
 });
 
 
