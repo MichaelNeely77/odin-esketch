@@ -26,14 +26,15 @@ for (let i = 0; i < rows; i++ ) {
         gridItem.addEventListener("mouseup", () => {
             gridItem.style.backgroundColor = "none";
         });
+
     }
 }
 
-let gridSize = prompt("How many squares would you like?");
+// let gridSize = prompt("How many squares would you like?");
 // GridSize needs to be validated for specific limits
 // Right now prompt keeps adding numbers without decreasing the values of teh grid
-rows = gridSize;
-columns = gridSize;
+// rows = gridSize;
+// columns = gridSize;
 
 /* Possible solution to making teh grid the same size is something like gridContainer.innerWidth / gridSize maybe?
 */
