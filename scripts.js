@@ -40,35 +40,54 @@
 /* Possible solution to making teh grid the same size is something like gridContainer.innerWidth / gridSize maybe?
 */
 
-let rows = 16;
-let columns = 16;
-const selectBtn = document.querySelector(".grid-size-button button");
+document.addEventListener('DOMContentLoaded', intitializeGrid);
+
+function intitializeGrid() {
+    buildGrid(16);
+}
+
 
 const containerWidth = document.getElementById('es-grid-container').clientWidth;
 
 const gridContainer = document.getElementById("es-grid-container");
-let totalSquares = rows * columns;
 
+function buildGrid(size) {
+
+    const totalSquares = size * size;
+    const gridItemSize = containerWidth / size;
+
+    for(let i = 0; i < totalSquares; i++) {
+        const gridItem = document.createElement('div');
+        gridItem.classList.add('es-grid-item');
+        gridItem.style.width = `${gridItemSize}px`;
+        gridItem.style.height = `${gridItemSize}px`;
+        gridContainer.appendChild(gridItem);
+    }
+
+}
+
+
+const selectBtn = document.querySelector(".grid-size-button button");
 selectBtn.addEventListener('click', () => {
-
+    gridContainer.innerHTML = '';
 
     let gridSize = prompt("How many squares would you like?");
 
-    rows = gridSize;
-    columns = gridSize;
-    console.log(rows);
-
+    buildGrid(gridSize);
 
 });
 
-for(let i = 0; i < totalSquares; i++) {
-    const gridItemSize = containerWidth / rows;
-    const gridItem = document.createElement('div');
-    gridItem.classList.add('es-grid-item');
-    gridItem.style.width = `${gridItemSize}px`;
-    gridItem.style.height = `${gridItemSize}px`;
-    gridContainer.appendChild(gridItem);
+
+function resetGrid() {
+    gridContainer.innerHTML = '';
+    buildGrid(16);
 }
+
+const resetBtn = document.querySelector('.reset-button-container button');
+console.log(resetBtn);
+resetBtn.addEventListener('click', resetGrid);
+
+
 
 
 
