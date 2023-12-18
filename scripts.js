@@ -32,16 +32,15 @@
 
 // let gridSize = prompt("How many squares would you like?");
 // GridSize needs to be validated for specific limits
-// Right now prompt keeps adding numbers without decreasing the values of teh grid
+// Right now prompt keeps adding numbers without decreasing the values of the grid
 // rows = gridSize;
 // columns = gridSize;
-
 
 
 /* Possible solution to making teh grid the same size is something like gridContainer.innerWidth / gridSize maybe?
 */
 
-let rows=16;
+let rows = 16;
 let columns = 16;
 const selectBtn = document.querySelector(".grid-size-button button");
 
@@ -49,6 +48,19 @@ const containerWidth = document.getElementById('es-grid-container').clientWidth;
 
 const gridContainer = document.getElementById("es-grid-container");
 let totalSquares = rows * columns;
+
+selectBtn.addEventListener('click', () => {
+
+
+    let gridSize = prompt("How many squares would you like?");
+
+    rows = gridSize;
+    columns = gridSize;
+    console.log(rows);
+
+
+});
+
 for(let i = 0; i < totalSquares; i++) {
     const gridItemSize = containerWidth / rows;
     const gridItem = document.createElement('div');
@@ -57,14 +69,7 @@ for(let i = 0; i < totalSquares; i++) {
     gridItem.style.height = `${gridItemSize}px`;
     gridContainer.appendChild(gridItem);
 }
-selectBtn.addEventListener('click', () => {
-    let gridSize = prompt("How many squares would you like?");
-    rows = gridSize;
-    columns = gridSize;
-    console.log(gridSize);
 
-
-});
 
 
 
