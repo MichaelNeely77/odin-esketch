@@ -98,7 +98,6 @@ function resetGrid() {
 }
 
 const resetBtn = document.querySelector('.reset-button-container button');
-console.log(resetBtn);
 resetBtn.addEventListener('click', resetGrid);
 
 
