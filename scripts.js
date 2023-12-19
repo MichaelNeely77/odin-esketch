@@ -52,18 +52,23 @@ const containerWidth = document.getElementById('es-grid-container').clientWidth;
 const gridContainer = document.getElementById("es-grid-container");
 
 function buildGrid(size) {
-
     const totalSquares = size * size;
     const gridItemSize = containerWidth / size;
-
-    for(let i = 0; i < totalSquares; i++) {
-        const gridItem = document.createElement('div');
-        gridItem.classList.add('es-grid-item');
-        gridItem.style.width = `${gridItemSize}px`;
-        gridItem.style.height = `${gridItemSize}px`;
-        gridContainer.appendChild(gridItem);
+    if (size < 16) {
+        alert("16 is minimum grid size.");
+        resetGrid();
+    }   else if (size > 200) {
+        alert("200 is the maximum.");
+        resetGrid();
+    } else{
+        for(let i = 0; i < totalSquares; i++) {
+            const gridItem = document.createElement('div');
+            gridItem.classList.add('es-grid-item');
+            gridItem.style.width = `${gridItemSize}px`;
+            gridItem.style.height = `${gridItemSize}px`;
+            gridContainer.appendChild(gridItem);
+        }
     }
-
 }
 
 
