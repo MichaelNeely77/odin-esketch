@@ -64,18 +64,25 @@ function buildGrid(size) {
     } else{
         for(let i = 0; i < totalSquares; i++) {
             const gridItem = document.createElement('div');
+            let isDrawing;
             gridItem.classList.add('es-grid-item');
             gridItem.style.width = `${gridItemSize}px`;
             gridItem.style.height = `${gridItemSize}px`;
             gridContainer.appendChild(gridItem);
             gridItem.addEventListener("mousedown", () => {
-                gridItem.style.backgroundColor = "#ccc";
+                isDrawing = true;
+                console.log('Mouse is down');
             });
-            // gridItem.addEventListener("mouseenter", () => {
-            //     gridItem.style.backgroundColor = "#ccc";
-            // });
+
             gridItem.addEventListener("mouseup", () => {
-                gridItem.style.backgroundColor = "none";
+               isDrawing = false;
+                console.log('Mouse is up');
+            });
+            gridItem.addEventListener("mouseover", (event) => {
+                if (isDrawing) {
+                    event.target.style.backgroundColor = "ccc";
+                    console.log('Mouse is hovering');
+                }
             });
         }
 
