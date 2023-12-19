@@ -77,9 +77,7 @@ selectBtn.addEventListener('click', () => {
     gridContainer.innerHTML = '';
 
     let gridSize = prompt("How many squares would you like?");
-
     buildGrid(gridSize);
-
 });
 
 
@@ -91,6 +89,8 @@ function resetGrid() {
 const resetBtn = document.querySelector('.reset-button-container button');
 console.log(resetBtn);
 resetBtn.addEventListener('click', resetGrid);
+
+
 
 
 
