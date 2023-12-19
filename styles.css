@@ -35,3 +35,9 @@ button {
 .es-grid-item {
     border: 1px solid #ccc;
 }
+
+.buttons-container {
+    margin-top: 30px;
+    display:flex;
+    justify-content: center;
+}

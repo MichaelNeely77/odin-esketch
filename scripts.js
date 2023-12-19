@@ -51,6 +51,7 @@ const containerWidth = document.getElementById('es-grid-container').clientWidth;
 
 const gridContainer = document.getElementById("es-grid-container");
 
+
 function buildGrid(size) {
     const totalSquares = size * size;
     const gridItemSize = containerWidth / size;
@@ -67,7 +68,17 @@ function buildGrid(size) {
             gridItem.style.width = `${gridItemSize}px`;
             gridItem.style.height = `${gridItemSize}px`;
             gridContainer.appendChild(gridItem);
+            gridItem.addEventListener("mousedown", () => {
+                gridItem.style.backgroundColor = "#ccc";
+            });
+            // gridItem.addEventListener("mouseenter", () => {
+            //     gridItem.style.backgroundColor = "#ccc";
+            // });
+            gridItem.addEventListener("mouseup", () => {
+                gridItem.style.backgroundColor = "none";
+            });
         }
+
     }
 }
 
