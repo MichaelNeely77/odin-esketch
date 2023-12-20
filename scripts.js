@@ -4,39 +4,6 @@
 // Create the divs using JavaScript - DONE
 //
 
-// let rows=16;
-// let columns = 16;
-// const gridContainer = document.getElementById("es-grid-container");
-
-
-
-// const selectButton = document.querySelector(".grid-size-button button");
-
-// for (let i = 0; i < rows; i++ ) {
-//     for (let j = 0; j < columns; j++) {
-//         const gridItem = document.createElement("div");
-//         gridItem.className = "es-grid-item";
-//         gridContainer.appendChild(gridItem);
-//         gridItem.addEventListener("mousedown", () => {
-//             gridItem.style.backgroundColor = "#ccc";
-//         });
-//         // gridItem.addEventListener("mouseenter", () => {
-//         //     gridItem.style.backgroundColor = "#ccc";
-//         // });
-//         gridItem.addEventListener("mouseup", () => {
-//             gridItem.style.backgroundColor = "none";
-//         });
-//
-//     }
-// }
-
-// let gridSize = prompt("How many squares would you like?");
-// GridSize needs to be validated for specific limits
-// Right now prompt keeps adding numbers without decreasing the values of the grid
-// rows = gridSize;
-// columns = gridSize;
-
-
 /* Possible solution to making teh grid the same size is something like gridContainer.innerWidth / gridSize maybe?
 */
 
@@ -51,6 +18,7 @@ const containerWidth = document.getElementById('es-grid-container').clientWidth;
 
 const gridContainer = document.getElementById("es-grid-container");
 let color = 'black';
+let clicked = true;
 
 function buildGrid(size) {
     const totalSquares = size * size;
@@ -75,12 +43,13 @@ function buildGrid(size) {
 }
 
 function colorSquare() {
-    if(color === 'random') {
-        const randomColor = Math.floor(Math.random()*16777215).toString(16);
-        console.log(randomColor);
-        this.style.backgroundColor = "#" + randomColor;
-    } else {
-        this.style.backgroundColor = color;
+    if (clicked) {
+        if (color === 'random') {
+            const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+            this.style.backgroundColor = "#" + randomColor;
+        } else {
+            this.style.backgroundColor = color;
+        }
     }
 }
 
@@ -106,7 +75,9 @@ function resetGrid() {
 const resetBtn = document.querySelector('.reset-button-container button');
 resetBtn.addEventListener('click', resetGrid);
 
-
+document.querySelector('body').addEventListener('click', () => {
+    clicked = !clicked;
+});
 
 
 
