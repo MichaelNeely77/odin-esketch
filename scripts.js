@@ -50,7 +50,7 @@ function intitializeGrid() {
 const containerWidth = document.getElementById('es-grid-container').clientWidth;
 
 const gridContainer = document.getElementById("es-grid-container");
-
+let color = 'black';
 
 function buildGrid(size) {
     const totalSquares = size * size;
@@ -64,29 +64,18 @@ function buildGrid(size) {
     } else{
         for(let i = 0; i < totalSquares; i++) {
             const gridItem = document.createElement('div');
-            let isDrawing;
             gridItem.classList.add('es-grid-item');
             gridItem.style.width = `${gridItemSize}px`;
             gridItem.style.height = `${gridItemSize}px`;
             gridContainer.appendChild(gridItem);
-            gridItem.addEventListener("mousedown", () => {
-                isDrawing = true;
-                console.log('Mouse is down');
-            });
-
-            gridItem.addEventListener("mouseup", () => {
-               isDrawing = false;
-                console.log('Mouse is up');
-            });
-            gridItem.addEventListener("mouseover", (event) => {
-                if (isDrawing) {
-                    event.target.style.backgroundColor = "ccc";
-                    console.log('Mouse is hovering');
-                }
-            });
+            gridItem.addEventListener('mouseover', colorSquare);
         }
 
     }
+}
+
+function colorSquare() {
+    this.style.backgroundColor = color;
 }
 
 
